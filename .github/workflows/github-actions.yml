@@ -1,0 +1,10 @@
+stages:
+  - test
+test_sonar:
+  stage: test
+  image: sonarsource/sonar-scanner-cli
+  script:
+    - ls -la
+    - npm install --legacy-peer-deps
+    - sonar-scanner -X
+  only: ['dev']
